@@ -1,0 +1,69 @@
+diff --git a/include/SFML/System/ResourcePtr.inl b/include/SFML/System/ResourcePtr.inl
+index dbfcd0d7..43060c50 100644
+--- a/include/SFML/System/ResourcePtr.inl
++++ b/include/SFML/System/ResourcePtr.inl
+@@ -22,13 +22,12 @@
+ //
+ ////////////////////////////////////////////////////////////
+ 
+-
+ ////////////////////////////////////////////////////////////
+ /// Default constructor
+ ////////////////////////////////////////////////////////////
+ template <typename T>
+ ResourcePtr<T>::ResourcePtr() :
+-myResource(NULL)
++myResource(0)
+ {
+ 
+ }
+@@ -145,5 +144,5 @@ const T* ResourcePtr<T>::operator ->() const
+ template <typename T>
+ void ResourcePtr<T>::OnResourceDestroyed()
+ {
+-    myResource = NULL;
++    myResource = 0;
+ }
+diff --git a/src/SFML/Audio/SoundBuffer.cpp b/src/SFML/Audio/SoundBuffer.cpp
+index e726b13a..3cea6c08 100644
+--- a/src/SFML/Audio/SoundBuffer.cpp
++++ b/src/SFML/Audio/SoundBuffer.cpp
+@@ -88,7 +88,7 @@ SoundBuffer::~SoundBuffer()
+ bool SoundBuffer::LoadFromFile(const std::string& Filename)
+ {
+     // Create the sound file
+-    std::auto_ptr<priv::SoundFile> File(priv::SoundFile::CreateRead(Filename));
++    std::unique_ptr<priv::SoundFile> File(priv::SoundFile::CreateRead(Filename));
+ 
+     // Open the sound file
+     if (File.get())
+@@ -129,7 +129,7 @@ bool SoundBuffer::LoadFromFile(const std::string& Filename)
+ bool SoundBuffer::LoadFromMemory(const char* Data, std::size_t SizeInBytes)
+ {
+     // Create the sound file
+-    std::auto_ptr<priv::SoundFile> File(priv::SoundFile::CreateRead(Data, SizeInBytes));
++    std::unique_ptr<priv::SoundFile> File(priv::SoundFile::CreateRead(Data, SizeInBytes));
+ 
+     // Open the sound file
+     if (File.get())
+@@ -199,7 +199,7 @@ bool SoundBuffer::LoadFromSamples(const Int16* Samples, std::size_t SamplesCount
+ bool SoundBuffer::SaveToFile(const std::string& Filename) const
+ {
+     // Create the sound file in write mode
+-    std::auto_ptr<priv::SoundFile> File(priv::SoundFile::CreateWrite(Filename, GetChannelsCount(), GetSampleRate()));
++    std::unique_ptr<priv::SoundFile> File(priv::SoundFile::CreateWrite(Filename, GetChannelsCount(), GetSampleRate()));
+     if (File.get())
+     {
+         // Write the samples to the opened file
+diff --git a/src/SFML/Window/Linux/Joystick.cpp b/src/SFML/Window/Linux/Joystick.cpp
+index 829a7415..c2dabf2a 100644
+--- a/src/SFML/Window/Linux/Joystick.cpp
++++ b/src/SFML/Window/Linux/Joystick.cpp
+@@ -27,6 +27,7 @@
+ ////////////////////////////////////////////////////////////
+ #include <SFML/Window/Joystick.hpp>
+ #include <sstream>
++#include <unistd.h>
+ 
+ 
+ namespace sf
