@@ -17,7 +17,7 @@ Interface::Interface()
     SelectionBase1.SetImage(ResourceManager::getImage("SelectionBase"));
     SelectionBase2.SetImage(ResourceManager::getImage("SelectionBase"));
     scoreNode.SetImage(ResourceManager::getImage("ScoreNode"));
-    theText = new TextRenderer("Graphics/consola.ttf", 12, sf::Color(255, 200, 150));
+    theText = new TextRenderer("Graphics/Consola.ttf", 12, sf::Color(255, 200, 150));
     theText->addStaticText("Main Weapon", 600, 626);
     theText->addStaticText("Power", 738, 626);
 
@@ -28,7 +28,7 @@ Interface::Interface()
     healthOverlay.SetPosition(145, 631);
     shieldOverlay.SetPosition(127, 674);
 
-    font.LoadFromFile("Graphics/consola.ttf", 12);
+    font.LoadFromFile("Graphics/Consola.ttf", 12);
 
     healthOverlay.SetImage(ResourceManager::getImage("HealthSegment"));
     shieldOverlay.SetImage(ResourceManager::getImage("ShieldSegment"));
