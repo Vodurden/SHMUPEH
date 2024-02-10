@@ -1,12 +1,5 @@
 #include "EnemySpawner.h"
 
-template <class T> class EnemySpawner : public EnemySpawnerBase
-{
-    public:
-        EnemySpawner(EnemyWaveSpawnerFactory* wFac, Enemy* tEnm, float spawnIn, float spawnInterval, int spawnAmount, bool alt = false) : EnemySpawnerBase(wFac, tEnm, spawnIn, spawnInterval, spawnAmount, alt) {}
-        void think();
-};
-
 template <class T> void EnemySpawner<T>::think()
 {
     for(std::vector<SpawnData*>::iterator mIter = dataStack.begin(); mIter != dataStack.end();)

@@ -2,8 +2,6 @@
 #include "State_StartMenu.h"
 #include "State_Game.h"
 
-enum STATE { STATE_STARTMENU, STATE_GAME };
-
 int main(int argc, char** argv)
 {
     State* states[2];

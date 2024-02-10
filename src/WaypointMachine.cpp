@@ -1,11 +1,13 @@
 #include "WaypointMachine.h"
 
-inline bool WaypointMachine::empty()
+#include "Logger.h"
+
+bool WaypointMachine::empty()
 {
     return Waypoints.empty();
 }
 
-inline bool WaypointMachine::validateAccess(const unsigned int pos)
+bool WaypointMachine::validateAccess(const unsigned int pos)
 {
     if(pos < Waypoints.size())
     {
@@ -20,7 +22,7 @@ inline bool WaypointMachine::validateAccess(const unsigned int pos)
     return false;
 }
 
-inline WaypointMachine::WaypointMachine(const unsigned int reserve)
+WaypointMachine::WaypointMachine(const unsigned int reserve)
 {
     if(reserve > 0)
         Waypoints.reserve(reserve);
@@ -29,7 +31,7 @@ inline WaypointMachine::WaypointMachine(const unsigned int reserve)
     wpMode = WP_LOOP;
 }
 
-inline const sf::Vector2f WaypointMachine::getCurrentWaypoint()
+const sf::Vector2f WaypointMachine::getCurrentWaypoint()
 {
     return *(Waypoints[currentWaypoint]);
 }

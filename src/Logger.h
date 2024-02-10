@@ -1,6 +1,10 @@
 #ifndef LOGGER_H_
 #define LOGGER_H_
 
+#include <sstream>
+#include <fstream>
+#include <string>
+
 //Closer to the left = higher priority
 //For example if LOGTYPE_TRIVIAL is the logLevel, all logs will be displayed
 //If LOGTYPE_EVENT is the logLevel, LOGTYPE_TRIVIAL will not be displayed

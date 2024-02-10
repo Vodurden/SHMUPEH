@@ -1,5 +1,8 @@
 #include "State_Game.h"
 
+#include <chrono>
+#include "Logger.h"
+
 State_Game::State_Game() :
     State(), screenW(1024), screenH(720), gameW(1024), gameH(630),
     Game(sf::VideoMode(screenW, screenH, 32), "SHMUPEH"),
@@ -49,15 +52,14 @@ void State_Game::handleEvents()
         {
             //Extrodinarily hacky code, but it works. Saves a screenshot
             //Into the screenshot folder with the form
-            // "Screenshots/SHMUPEH_(MONTH)(DAY)(YEAR)_(HOUR)(MINUTE)(SECOND)"
+            // "Screenshots/SHMUPEH_(UNIX TIMESTAMP)"
             // Replacing the ()'s with their respective values
             sf::Image Screen = Game.Capture();
-            char dateStr [9];
-            char timeStr [9];
-            _strdate( dateStr);
-            _strtime( timeStr );
+            auto now = std::chrono::system_clock::now();
+            std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+
             std::stringstream screenShotPath;
-            screenShotPath << "Screenshots/SHMUPEH_" << dateStr << "_" << timeStr << ".jpg";
+            screenShotPath << "Screenshots/SHMUPEH_" << now_c << ".jpg";
             std::string myStr = screenShotPath.str();
             for(std::string::iterator mIter = myStr.begin() + 12; mIter != myStr.end();)
             {

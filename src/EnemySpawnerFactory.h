@@ -1,6 +1,9 @@
 #ifndef ENEMYSPAWNERFACTORY_H_
 #define ENEMYSPAWNERFACTORY_H_
 
+#include "EnemySpawner.h"
+#include "EnemyWaveSpawnerFactory.h"
+
 //Allows you to spawn EnemyWaveSpawners
 class EnemySpawnerFactory
 {

@@ -1,6 +1,13 @@
 #ifndef TEXTRENDERER_H_
 #define TEXTRENDERER_H_
 
+#include <string>
+#include <vector>
+#include <SFML/System.hpp>
+#include <SFML/Graphics.hpp>
+
+#include "ResourceManager.h"
+
 enum {TOPLEFT, TOPCENTER, TOPRIGHT, MIDLEFT, MIDCENTER, MIDRIGHT, BOTTOMLEFT, BOTTOMCENTER, BOTTOMRIGHT};
 class Text
 {

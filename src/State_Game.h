@@ -8,6 +8,7 @@
 #include "LevelMachine.h"
 #include "TextRenderer.h"
 #include "Player.h"
+#include "State.h"
 
 // The entire games logic, top view.
 class State_Game : public State

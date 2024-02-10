@@ -1,5 +1,7 @@
 #include "ResourceManager.h"
 
+#include "Logger.h"
+
 std::map<std::string, sf::Image*> ResourceManager::Images;
 std::map<std::string, Animation*> ResourceManager::Animations;
 

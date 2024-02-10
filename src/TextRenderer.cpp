@@ -1,5 +1,7 @@
 #include "TextRenderer.h"
 
+#include "Logger.h"
+
 Text::Text(const float X, const float Y, const char* str, sf::Font* Font, const float DTime, const sf::Color c)
 {
     font = Font;
@@ -145,7 +147,7 @@ void TextRenderer::addText(std::string message, int position, float dieTime)
     Text* temp = new Text(X, Y, Message.c_str(), &font, DieTime, textColor);
     temp->setMessage(Message.c_str());
     textQueues.at(position).push_back(temp);
-    Logger::log("Text '" + Message + "' created, set to die in " +  ConvertToString(dieTime) + "ms", LOGTYPE_TRIVIAL);
+    Logger::log("Text '" + Message + "' created, set to die in " +  std::to_string(dieTime) + "ms", LOGTYPE_TRIVIAL);
 }
 
 void TextRenderer::addDelayText(std::string message, float x, float y, float dieTime)
@@ -186,12 +188,12 @@ void TextRenderer::think()
     //Update Static Text Watches
     for(unsigned int z = 0; z < staticTextWatchesFloat.size(); z++)
     {
-        staticTextWatchesFloat.at(z)->setMessage(staticTextWatchesFloat.at(z)->getOriginalMessage() + ConvertToString(*staticTextValuesFloat.at(z)));
+        staticTextWatchesFloat.at(z)->setMessage(staticTextWatchesFloat.at(z)->getOriginalMessage() + std::to_string(*staticTextValuesFloat.at(z)));
     }
 
     for(unsigned int z = 0; z < staticTextWatchesInt.size(); z++)
     {
-        staticTextWatchesInt.at(z)->setMessage(staticTextWatchesInt.at(z)->getOriginalMessage() + ConvertToString(*staticTextValuesInt.at(z)));
+        staticTextWatchesInt.at(z)->setMessage(staticTextWatchesInt.at(z)->getOriginalMessage() + std::to_string(*staticTextValuesInt.at(z)));
     }
 }
 

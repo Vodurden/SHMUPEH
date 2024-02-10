@@ -1,5 +1,7 @@
 #include "Interface.h"
 
+#include <sstream>
+
 Interface::Interface()
 {
     x = 0.0f;

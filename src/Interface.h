@@ -1,6 +1,7 @@
 #ifndef INTERFACE_H_
 #define INTERFACE_H_
 
+#include "ButtonManager.h"
 #include "TextRenderer.h"
 #include "Player.h"
 

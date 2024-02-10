@@ -1,6 +1,8 @@
 #ifndef LEVELMACHINEN_H_
 #define LEVELMACHINEN_H_
 
+#include "EnemyManager.h"
+
 enum WAVE_SIZE {SIZE_ERROR, SIZE_SMALL, SIZE_MEDIUM};
 //Base for all possible combinations of spawn patterns.
 class BaseWave

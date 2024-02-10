@@ -1,6 +1,9 @@
 #ifndef ENEMYWAVESPAWNERFACTORY_H_
 #define ENEMYWAVESPAWNERFACTORY_H_
 
+#include "EnemyFactory.h"
+#include "EnemyWaveSpawner.h"
+
 //Allows you to spawn X enemies every Y interval using another class.
 class EnemyWaveSpawnerFactory
 {

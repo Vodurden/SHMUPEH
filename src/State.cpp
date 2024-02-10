@@ -1,5 +1,7 @@
 #include "State.h"
 
+#include "Logger.h"
+
 void State::handleEvents() {Logger::log(" base 'State' handleEvents() called", LOGTYPE_ERROR);}
 void State::think() {Logger::log(" base 'State' think() called", LOGTYPE_ERROR);}
 void State::draw() {Logger::log(" base 'State' draw() called", LOGTYPE_ERROR);}

@@ -5,7 +5,7 @@ State_StartMenu::State_StartMenu() :
 {
     nextState = STATE_STARTMENU;
     StartMenu.SetFramerateLimit(60);
-    StartImage = ResourceManager::getImage("StartImage");
+    StartImage.SetImage(ResourceManager::getImage("StartImage"));
 }
 
 void State_StartMenu::open()

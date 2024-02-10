@@ -1,6 +1,8 @@
 #ifndef RESOURCEMANAGER_H_
 #define RESOURCEMANAGER_H_
 
+#include "Animation.h"
+
 //Loads a static resource (Image or Animation) to be used by other classes
 class ResourceManager
 {

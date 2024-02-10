@@ -1,6 +1,8 @@
 #ifndef STATE_H_
 #define STATE_H_
 
+enum STATE { STATE_STARTMENU, STATE_GAME };
+
 // Base class for all types of states (Windows open on the game)
 class State
 {

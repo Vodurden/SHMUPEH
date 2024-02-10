@@ -3,6 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "ButtonManager.h"
+#include "State.h"
 
 // The starting menu, with all the help information.
 class State_StartMenu : public State

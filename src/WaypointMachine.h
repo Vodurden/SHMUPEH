@@ -1,6 +1,9 @@
 #ifndef WAYPOINTMACHINE_H_
 #define WAYPOINTMACHINE_H_
 
+#include <vector>
+#include <SFML/Graphics.hpp>
+
 enum {WP_LOOP, WP_SINGLE};
 // Class to handle all Waypoint stuff
 class WaypointMachine
