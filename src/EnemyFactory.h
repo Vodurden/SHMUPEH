@@ -1,6 +1,9 @@
 #ifndef ENEMYFACTORY_H_
 #define ENEMYFACTORY_H_
 
+#include "Enemy.h"
+#include "EnemyBulletFactory.h"
+
 struct ExplosionData
 {
     ExplosionData(Animation* ep, float X, float Y)

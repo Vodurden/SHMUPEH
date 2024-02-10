@@ -1,6 +1,8 @@
 #ifndef BUTTON_H_
 #define BUTTON_H_
 
+#include "Player.h"
+
 //Buttons are clickable objects on the screen, in SHMUPEHs case they control the weapon and power selection.
 class Button
 {

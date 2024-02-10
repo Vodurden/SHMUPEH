@@ -1,6 +1,8 @@
 #ifndef ENEMYBULLETFACTORY_H_
 #define ENEMYBULLETFACTORY_H_
 
+#include <SFML/Graphics.hpp>
+
 class Player;
 class Bullet;
 //Handles updating the collisions and movement of all enemy bullets.

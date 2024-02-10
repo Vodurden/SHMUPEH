@@ -73,7 +73,7 @@ void BulletFactory::think(float deltaTicks, std::vector<Enemy*>& enemies)
                         iterates = false;
                         blankBullet = true;
                         bulletCount -= 1;
-                        damageRender->addDelayText( ConvertToString( (*mIter)->getDamage() ), (*mIter)->getX(), (*mIter)->getY(), 0.6f);
+                        damageRender->addDelayText(std::to_string((*mIter)->getDamage()), (*mIter)->getX(), (*mIter)->getY(), 0.6f);
                     }
                     else
                     {

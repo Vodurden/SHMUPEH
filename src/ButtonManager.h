@@ -1,6 +1,8 @@
 #ifndef BUTTONMANAGER_H_
 #define BUTTONMANAGER_H_
 
+#include "Button.h"
+
 //The ButtonManager class handles the buttons and ensures that they are drawn and can receive click events.
 class ButtonManager
 {

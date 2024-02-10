@@ -1,6 +1,10 @@
 #ifndef BULLETFACTORY_H_
 #define BULLETFACTORY_H_
 
+#include "Bullet.h"
+#include "Enemy.h"
+#include "TextRenderer.h"
+
 //BulletFactories manage an array of bullets, they handle bullet movement and collision.
 class BulletFactory
 {

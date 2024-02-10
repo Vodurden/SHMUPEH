@@ -1,6 +1,9 @@
 #ifndef INTERFACE_H_
 #define INTERFACE_H_
 
+#include "TextRenderer.h"
+#include "Player.h"
+
 //Draws the entire interface.
 class Interface
 {

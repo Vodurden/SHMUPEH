@@ -1,6 +1,14 @@
 #ifndef STATE_GAME_H_
 #define STATE_GAME_H_
 
+#include "BulletFactory.h"
+#include "Enemy.h"
+#include "EnemyManager.h"
+#include "Interface.h"
+#include "LevelMachine.h"
+#include "TextRenderer.h"
+#include "Player.h"
+
 // The entire games logic, top view.
 class State_Game : public State
 {

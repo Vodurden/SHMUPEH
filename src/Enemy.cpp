@@ -1,5 +1,9 @@
 #include "Enemy.h"
 
+#include "Bullet.h"
+#include "Logger.h"
+#include "ResourceManager.h"
+
 int Enemy::screenW = 0;
 int Enemy::screenH = 0;
 

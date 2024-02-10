@@ -1,6 +1,8 @@
 #ifndef BULLET_H_
 #define BULLET_H_
 
+#include "Animation.h"
+
 // Bullets are objects that are shot by enemies and players and can damage things, they do not handle their own collision
 class Bullet
 {

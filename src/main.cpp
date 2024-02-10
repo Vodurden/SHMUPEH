@@ -17,7 +17,7 @@ int main(int argc, char** argv)
       states[currentState]->think();
       states[currentState]->draw();
 
-      currentState = states[currentState]->nextState;
+      currentState = states[currentState]->getNextState();
     }
 
     delete states[0];

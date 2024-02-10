@@ -1,6 +1,10 @@
 #ifndef ENEMY_H_
 #define ENEMY_H_
 
+#include "Animation.h"
+#include "EnemyBulletFactory.h"
+#include "WaypointMachine.h"
+
 // The Enemy is the base class for all enemies, it has no AI but contains all of the attributes of other enemies.
 class Enemy
 {

@@ -1,6 +1,10 @@
 #ifndef ENEMYSPAWNER_H_
 #define ENEMYSPAWNER_H_
 
+#include <vector>
+#include "EnemyWaveSpawnerFactory.h"
+#include "Enemy.h"
+
 struct SpawnData
 {
     SpawnData(Enemy* b, float spawnAt, float spawnInterval, int spawnAmount) :
@@ -26,5 +30,13 @@ class EnemySpawnerBase
         bool isDone() {return dataStack.empty();}
         virtual void think() = 0;
 };
+
+template <class T> class EnemySpawner : public EnemySpawnerBase
+{
+    public:
+        EnemySpawner(EnemyWaveSpawnerFactory* wFac, Enemy* tEnm, float spawnIn, float spawnInterval, int spawnAmount, bool alt = false) : EnemySpawnerBase(wFac, tEnm, spawnIn, spawnInterval, spawnAmount, alt) {}
+        void think();
+};
+
 
 #endif // ENEMYSPAWNER_H_

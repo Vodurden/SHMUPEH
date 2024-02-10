@@ -1,6 +1,10 @@
 #ifndef PLAYER_H_
 #define PLAYER_H_
 
+#include "Animation.h"
+#include "BulletFactory.h"
+#include "EnemyFactory.h"
+
 enum {WEAPON_FORWARD, WEAPON_DIAGONAL, WEAPON_BROADSIDE};
 enum {ENERGY_WEAPONS, ENERGY_SHIELD, ENERGY_ENGINES};
 

@@ -1,6 +1,8 @@
 #ifndef ANIMATION_H_
 #define ANIMATION_H_
 
+#include <SFML/Graphics.hpp>
+
 // The animation class holds and animates a sprite, it is interchangeable with sprites.
 class Animation
 {

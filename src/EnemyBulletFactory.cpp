@@ -1,5 +1,8 @@
 #include "EnemyBulletFactory.h"
 
+#include "Bullet.h"
+#include "Player.h"
+
 int EnemyBulletFactory::gameW = 0;
 int EnemyBulletFactory::gameH = 0;
 
