@@ -16,6 +16,7 @@ void ResourceManager::loadImage(const std::string& name, const std::string& file
         else
             Logger::log("Loaded image " + name, LOGTYPE_EVENT);
 
+        Images[name]->SetSmooth(false);
         Images[name]->CreateMaskFromColor(sf::Color(255, 255, 255), 0);
     }
     else

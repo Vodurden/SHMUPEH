@@ -16,6 +16,7 @@ class EnemyWaveSpawnerBase
         sf::Clock spawnTimer;
     public:
         EnemyWaveSpawnerBase(Enemy* base, EnemyFactory* enemyFactory, float spawnInterval, int spawnAmount);
+        virtual ~EnemyWaveSpawnerBase();
         virtual void think() = 0;
         bool isDone() { return currentAmount >= spawnAmount; };
 };
@@ -29,7 +30,13 @@ template <class T> class EnemyWaveSpawner : public EnemyWaveSpawnerBase
 
 template <class T> void EnemyWaveSpawner<T>::think()
 {
-    // TODO
+    if (currentAmount >= spawnAmount) { return; }
+
+    if (spawnTimer.GetElapsedTime() > spawnInterval) {
+        enemyFactory->addEnemy(base);
+        ++currentAmount;
+        spawnTimer.Reset();
+    }
 }
 
 #endif // ENEMYWAVESPAWNER_H_
