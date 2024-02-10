@@ -1,9 +1,13 @@
 #include "State.h"
 #include "State_StartMenu.h"
 #include "State_Game.h"
+#include "Logger.h"
 
 int main(int argc, char** argv)
 {
+    Logger::setLogLevel(LOGTYPE_EVENT);
+    Logger::setLogFile("shmupeh.log");
+
     State* states[2];
     states[0] = new State_StartMenu();
     states[1] = new State_Game();
