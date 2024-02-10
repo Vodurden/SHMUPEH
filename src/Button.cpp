@@ -1,5 +1,31 @@
 #include "Button.h"
 
+Button::Button(std::string Name, const sf::Image& Sprite, const sf::Image& Sprite_Pressed, const sf::Image& Sprite_active, int X, int Y, int W, int H)
+{
+    sprite.SetImage(Sprite);
+    sprite_pressed.SetImage(Sprite_Pressed);
+    sprite_active.SetImage(Sprite_active);
+
+    font.LoadFromFile("Graphics/Consola.ttf", 12);
+
+    name.SetText(Name);
+    name.SetPosition(X + 20, Y + 2);
+    name.SetSize(12);
+    name.SetFont(font);
+
+    sprite.SetPosition(X, Y);
+    sprite_pressed.SetPosition(X, Y);
+    sprite_active.SetPosition(X, Y);
+
+    box.Left = X;
+    box.Top = Y;
+    box.Right = X + W;
+    box.Bottom = Y + H;
+
+    pressed = false;
+    active = false;
+}
+
 Button::~Button()
 {
 
