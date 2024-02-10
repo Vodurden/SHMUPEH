@@ -38,5 +38,20 @@ template <class T> class EnemySpawner : public EnemySpawnerBase
         void think();
 };
 
+template <class T> void EnemySpawner<T>::think()
+{
+    for(std::vector<SpawnData*>::iterator mIter = dataStack.begin(); mIter != dataStack.end();)
+    {
+        if( (*mIter)->spawnTimer.GetElapsedTime() > (*mIter)->spawnIn )
+        {
+            tWaves->addWave<T>((*mIter)->base, (*mIter)->spawnInterv, (*mIter)->spawnAmnt);
+            mIter = dataStack.erase(mIter);
+        }
+        else
+        {
+            mIter++;
+        }
+    }
+}
 
 #endif // ENEMYSPAWNER_H_

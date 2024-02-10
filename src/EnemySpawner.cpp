@@ -1,21 +1,5 @@
 #include "EnemySpawner.h"
 
-template <class T> void EnemySpawner<T>::think()
-{
-    for(std::vector<SpawnData*>::iterator mIter = dataStack.begin(); mIter != dataStack.end();)
-    {
-        if( (*mIter)->spawnTimer.GetElapsedTime() > (*mIter)->spawnIn )
-        {
-            tWaves->addWave<T>((*mIter)->base, (*mIter)->spawnInterv, (*mIter)->spawnAmnt);
-            mIter = dataStack.erase(mIter);
-        }
-        else
-        {
-            mIter++;
-        }
-    }
-}
-
 EnemySpawnerBase::EnemySpawnerBase(EnemyWaveSpawnerFactory* wFac, Enemy* tEnm, float spawnIn, float spawnInterval, int spawnAmount, bool alt)
 {
     tWaves = wFac;
