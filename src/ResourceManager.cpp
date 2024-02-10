@@ -36,6 +36,7 @@ const sf::Image& ResourceManager::getImage(const std::string& name)
     if(Images.find(name) == Images.end())
     {
         Logger::log("Image " + name + " does not exist, a blank image will be returned", LOGTYPE_ERROR);
+        Images[name] = new sf::Image();
     }
 
     return *Images[name];
