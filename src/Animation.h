@@ -10,7 +10,7 @@ class Animation
         sf::Sprite sprite;
         sf::FloatRect clip; //The size of each animation frame
         sf::Clock timer; //Times each animation stage
-        int curFrame, endFrame;
+        int curFrame, maxFrames;
         float frameInterval;
         bool started;
         bool loop;
@@ -18,7 +18,7 @@ class Animation
     public:
         Animation(const sf::Image& Image, const int frW, const int frH, const float timeBetweenFrames, const int maxFrames, bool Loop = true);
         Animation(const Animation& rhs);
-        void start(){started = true; curFrame = 1;}
+        void start() { started = true; curFrame = 0; }
         void stop(){started = false;}
         void setLoop(bool l) {loop = l;}
 
@@ -30,7 +30,7 @@ class Animation
         float getFrameInterval() {return frameInterval;}
         sf::Vector2f getScale() {return sprite.GetScale();}
         sf::IntRect getSubRect() {return sprite.GetSubRect();}
-        int getMaxFrames() {return endFrame;}
+        int getMaxFrames() {return maxFrames;}
         float getX() {return sprite.GetPosition().x;}
         float getY() {return sprite.GetPosition().y;}
         float getRotation() {return sprite.GetRotation();}
@@ -53,7 +53,7 @@ class Animation
         void move(const float x, const float y) {sprite.Move(x, y);}
         void rotate(const float deg) {sprite.Rotate(deg);}
         void scale(const float facX, const float facY) {sprite.Scale(facX, facY);}
-        bool isDone() { return (loop == false && curFrame == endFrame - 1); }
+        bool isDone() { return (loop == false && curFrame == maxFrames - 1); }
 };
 
 #endif // ANIMATION_H_

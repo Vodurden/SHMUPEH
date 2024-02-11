@@ -59,6 +59,19 @@ void EnemyFactory::think(float deltaTicks, EnemyBulletFactory& tBullets, int& sc
             mIter++;
         }
     }
+
+    for(std::vector<ExplosionData*>::iterator aIter = explosionArray.begin(); aIter != explosionArray.end();)
+    {
+        (*aIter)->explosion->think();
+        if((*aIter)->explosion->isDone() == true)
+        {
+            aIter = explosionArray.erase(aIter);
+        }
+        else
+        {
+            aIter++;
+        }
+    }
 }
 
 void EnemyFactory::addEnemy(Enemy* base)
@@ -74,18 +87,8 @@ void EnemyFactory::draw(sf::RenderWindow& game)
         (*mIter)->draw(game);
     }
 
-    for(std::vector<ExplosionData*>::iterator aIter = explosionArray.begin(); aIter != explosionArray.end();)
+    for(std::vector<ExplosionData*>::iterator aIter = explosionArray.begin(); aIter != explosionArray.end(); aIter++)
     {
-        (*aIter)->explosion->think();
         (*aIter)->explosion->draw((*aIter)->x, (*aIter)->y, game);
-
-        if( (*aIter)->explosion->isDone() == true)
-        {
-            aIter = explosionArray.erase(aIter);
-        }
-        else
-        {
-            aIter++;
-        }
     }
 }

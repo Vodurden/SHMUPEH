@@ -6,7 +6,7 @@ void Animation::think()
     {
         if(timer.GetElapsedTime() >= frameInterval)
         {
-                if(curFrame < endFrame)
+                if(curFrame < maxFrames - 1)
                 {
                     clip.Offset(clip.GetWidth(), 0);
                     curFrame += 1;
@@ -15,8 +15,10 @@ void Animation::think()
                 {
                     if(loop)
                     {
-                        clip.Offset(-(clip.GetWidth() * (endFrame - 1)),0); //Move back to the start
-                        curFrame = 1;
+                        int width = clip.GetWidth();
+                        clip.Left = 0;
+                        clip.Right = width;
+                        curFrame = 0;
                     }
                 }
 
@@ -29,9 +31,9 @@ void Animation::think()
 Animation::Animation(const sf::Image& Image, const int frW, const int frH, const float timeBetweenFrames, const int maxFrames, bool Loop)
 {
     sprite.SetImage(Image);
-    curFrame = 1;
+    curFrame = 0;
     frameInterval = timeBetweenFrames;
-    endFrame = maxFrames;
+    this->maxFrames = maxFrames;
     started = false;
 
     clip.Left = 0;
@@ -51,7 +53,7 @@ Animation::Animation(const Animation& rhs)
     sprite.SetCenter(rhs.sprite.GetCenter());
     curFrame = rhs.curFrame;
     frameInterval = rhs.frameInterval;
-    endFrame = rhs.endFrame;
+    maxFrames = rhs.maxFrames;
     started = rhs.started;
 
     clip.Left = rhs.clip.Left;
