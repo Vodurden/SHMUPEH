@@ -55,13 +55,13 @@ Interface::Interface()
                                         ResourceManager::getImage("Button_Active"),
                                         sb1Pos.x + 6, sb1Pos.y + 60, 106, 20));
 
-    tButtons.addButton(new ChangePowerButton(ENERGY_SHIELD, "Shields",
+    tButtons.addButton(new ChangePowerButton(ENERGY_WEAPONS, "Weapons",
                                         ResourceManager::getImage("Button_Unpressed"),
                                         ResourceManager::getImage("Button_Pressed"),
                                         ResourceManager::getImage("Button_Active"),
                                         sb2Pos.x + 6, sb2Pos.y + 16, 106, 20));
 
-    tButtons.addButton(new ChangePowerButton(ENERGY_WEAPONS, "Weapons",
+    tButtons.addButton(new ChangePowerButton(ENERGY_SHIELD, "Shields",
                                         ResourceManager::getImage("Button_Unpressed"),
                                         ResourceManager::getImage("Button_Pressed"),
                                         ResourceManager::getImage("Button_Active"),
