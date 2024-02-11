@@ -24,11 +24,13 @@ Interface::Interface()
     shieldOverlay.SetPosition(x + 124, y + 49);
     scoreNode.SetPosition(x + 817, y + 12);
 
-    theText->addStaticText("Main Weapon", 600, 626);
-    SelectionBase1.SetPosition(x + 583, y + 2);
+    sf::Vector2f sb1Pos(x + 583, y + 2);
+    SelectionBase1.SetPosition(sb1Pos);
+    theText->addStaticText("Main Weapon", sb1Pos.x + 14, sb1Pos.y - 1);
 
-    theText->addStaticText("Power", 738, 626);
-    SelectionBase2.SetPosition(x + 696, y + 2);
+    sf::Vector2f sb2Pos(x + 696, y + 2);
+    SelectionBase2.SetPosition(sb2Pos);
+    theText->addStaticText("Power", sb2Pos.x + 36, sb2Pos.y - 1);
 
     font.LoadFromFile("Graphics/Consola.ttf", 12);
 
