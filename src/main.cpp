@@ -21,7 +21,9 @@ int main(int argc, char** argv)
     ResourceManager::loadAnimation("Player", "Graphics/player.png", 46, 51, 0.2, 1, false);
     ResourceManager::loadAnimation("Rapid_Bullet", "Graphics/rapid_bullet.png", 12, 28, 0.2, 1, false);
     ResourceManager::loadAnimation("YellowOrb", "Graphics/energy_orb.png", 12, 28, 0.2, 1, false);
-    ResourceManager::loadAnimation("Explosion", "Graphics/explosion.png", 80, 80, 0.3, 3, false);
+    ResourceManager::loadAnimation("Broadside_Left", "Graphics/energy_orb.png", 12, 28, 0.2, 1, false);
+    ResourceManager::loadAnimation("Broadside_Right", "Graphics/energy_orb.png", 12, 28, 0.2, 1, false);
+    ResourceManager::loadAnimation("Explosion", "Graphics/explosion.png", 80, 80, 0.1, 4, false);
 
     // Animations -- SHip Placerholers
     ResourceManager::loadAnimation("Rusty", "Graphics/rusty.png", 43, 42, 0.1, 1, false);
