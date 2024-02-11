@@ -9,7 +9,7 @@ Button::Button(std::string Name, const sf::Image& Sprite, const sf::Image& Sprit
     font.LoadFromFile("Graphics/Consola.ttf", 12);
 
     name.SetText(Name);
-    name.SetPosition(X + 20, Y + 2);
+    name.SetPosition(X + 10, Y + 2);
     name.SetSize(12);
     name.SetFont(font);
 

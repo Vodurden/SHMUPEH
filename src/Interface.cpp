@@ -41,37 +41,37 @@ Interface::Interface()
                                             ResourceManager::getImage("Button_Unpressed"),
                                             ResourceManager::getImage("Button_Pressed"),
                                             ResourceManager::getImage("Button_Active"),
-                                            587, 641, 106, 20));
+                                            sb1Pos.x + 6, sb1Pos.y + 16, 106, 20));
 
     tButtons.addButton(new ChangeWeaponButton(WEAPON_DIAGONAL, "Energy Orb",
                                             ResourceManager::getImage("Button_Unpressed"),
                                             ResourceManager::getImage("Button_Pressed"),
                                             ResourceManager::getImage("Button_Active"),
-                                            587, 663, 106, 20));
+                                            sb1Pos.x + 6, sb1Pos.y + 38, 106, 20));
 
     tButtons.addButton(new ChangeWeaponButton(WEAPON_BROADSIDE, "Burn Cannon",
                                         ResourceManager::getImage("Button_Unpressed"),
                                         ResourceManager::getImage("Button_Pressed"),
                                         ResourceManager::getImage("Button_Active"),
-                                        587, 685, 106, 20));
+                                        sb1Pos.x + 6, sb1Pos.y + 60, 106, 20));
 
     tButtons.addButton(new ChangePowerButton(ENERGY_SHIELD, "Shields",
                                         ResourceManager::getImage("Button_Unpressed"),
                                         ResourceManager::getImage("Button_Pressed"),
                                         ResourceManager::getImage("Button_Active"),
-                                        701, 663, 106, 20));
+                                        sb2Pos.x + 6, sb2Pos.y + 16, 106, 20));
 
     tButtons.addButton(new ChangePowerButton(ENERGY_WEAPONS, "Weapons",
                                         ResourceManager::getImage("Button_Unpressed"),
                                         ResourceManager::getImage("Button_Pressed"),
                                         ResourceManager::getImage("Button_Active"),
-                                        701, 641, 106, 20));
+                                        sb2Pos.x + 6, sb2Pos.y + 38, 106, 20));
 
     tButtons.addButton(new ChangePowerButton(ENERGY_ENGINES, "Engines",
                                         ResourceManager::getImage("Button_Unpressed"),
                                         ResourceManager::getImage("Button_Pressed"),
                                         ResourceManager::getImage("Button_Active"),
-                                        701, 685, 106, 20));
+                                        sb2Pos.x + 6, sb2Pos.y + 60, 106, 20));
 }
 
 Interface::~Interface()
