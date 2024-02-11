@@ -18,7 +18,11 @@ class Animation
     public:
         Animation(const sf::Image& Image, const int frW, const int frH, const float timeBetweenFrames, const int maxFrames, bool Loop = true);
         Animation(const Animation& rhs);
-        void start() { started = true; curFrame = 0; }
+        void start() {
+          started = true;
+          curFrame = 0;
+          timer.Reset();
+        }
         void stop(){started = false;}
         void setLoop(bool l) {loop = l;}
 
