@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 
     ResourceManager::loadImage("StartImage", "Graphics/startimage.png");
     ResourceManager::loadImage("Interface_Background", "Graphics/interface_background.png");
-    // ResourceManager::loadImage("ScoreNode", "Graphics/score_node.png");
+    ResourceManager::loadImage("ScoreNode", "Graphics/score_node.png");
     ResourceManager::loadImage("HealthSegment", "Graphics/health_segment.png");
     ResourceManager::loadImage("ShieldSegment", "Graphics/shield_segment.png");
     ResourceManager::loadImage("SelectionBase", "Graphics/selection_base.png");
@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 
     ResourceManager::loadAnimation("Player", "Graphics/player.png", 46, 51, 0.2, 1, false);
     ResourceManager::loadAnimation("Rapid_Bullet", "Graphics/rapid_bullet.png", 12, 28, 0.2, 1, false);
-    ResourceManager::loadAnimation("YellowOrb", "Graphics/energy_orb.png", 12, 28, 0.2, 1, false);
+    ResourceManager::loadAnimation("YellowOrb", "Graphics/energy_orb.png", 16, 16, 0.2, 1, false);
     ResourceManager::loadAnimation("Broadside_Left", "Graphics/energy_orb.png", 12, 28, 0.2, 1, false);
     ResourceManager::loadAnimation("Broadside_Right", "Graphics/energy_orb.png", 12, 28, 0.2, 1, false);
     ResourceManager::loadAnimation("Explosion", "Graphics/explosion.png", 80, 80, 0.1, 4, false);
@@ -34,11 +34,11 @@ int main(int argc, char** argv)
     ResourceManager::loadAnimation("Blaster", "Graphics/blaster.png", 33, 41, 0.1, 1, false);
 
     // Animationns -- Enemy weapon placeholders
-    ResourceManager::loadAnimation("BlueOrb", "Graphics/energy_orb.png", 12, 28, 0.2, 1, false);
-    ResourceManager::loadAnimation("EnemyRapidBullet", "Graphics/rapid_bullet.png", 12, 28, 0.2, 1, false);
-    ResourceManager::loadAnimation("HawkBullet", "Graphics/rapid_bullet.png", 12, 28, 0.2, 1, false);
-    ResourceManager::loadAnimation("Redarang", "Graphics/rapid_bullet.png", 12, 28, 0.2, 1, false);
-    ResourceManager::loadAnimation("Lazer", "Graphics/rapid_bullet.png", 12, 28, 0.2, 1, false);
+    ResourceManager::loadAnimation("BlueOrb", "Graphics/blue_orb.png", 16, 16, 0.2, 1, false);
+    ResourceManager::loadAnimation("EnemyRapidBullet", "Graphics/enemy_rapid_bullet.png", 12, 28, 0.2, 1, false);
+    ResourceManager::loadAnimation("HawkBullet", "Graphics/hawk_bullet.png", 12, 34, 0.2, 1, false);
+    ResourceManager::loadAnimation("Redarang", "Graphics/redarang.png", 24, 18, 0.2, 1, false);
+    ResourceManager::loadAnimation("Lazer", "Graphics/lazer.png", 4, 25, 0.2, 1, false);
 
     State* states[2];
     states[0] = new State_StartMenu();
