@@ -27,11 +27,11 @@ int main(int argc, char** argv)
 
     // Animations -- SHip Placerholers
     ResourceManager::loadAnimation("Rusty", "Graphics/rusty.png", 43, 42, 0.1, 1, false);
-    ResourceManager::loadAnimation("Purple_Fighter", "Graphics/rusty.png", 43, 42, 0.1, 1, false);
-    ResourceManager::loadAnimation("Green_Fighter", "Graphics/rusty.png", 43, 42, 0.1, 1, false);
-    ResourceManager::loadAnimation("Insect", "Graphics/rusty.png", 43, 42, 0.1, 1, false);
-    ResourceManager::loadAnimation("Vampire", "Graphics/rusty.png", 43, 42, 0.1, 1, false);
-    ResourceManager::loadAnimation("Blaster", "Graphics/rusty.png", 43, 42, 0.1, 1, false);
+    ResourceManager::loadAnimation("Purple_Fighter", "Graphics/purple_fighter.png", 36, 54, 0.1, 1, false);
+    ResourceManager::loadAnimation("Green_Fighter", "Graphics/green_fighter.png", 44, 55, 0.1, 1, false);
+    ResourceManager::loadAnimation("Insect", "Graphics/insect.png", 30, 43, 0.1, 1, false);
+    ResourceManager::loadAnimation("Vampire", "Graphics/vampire.png", 64, 74, 0.1, 1, false);
+    ResourceManager::loadAnimation("Blaster", "Graphics/blaster.png", 33, 41, 0.1, 1, false);
 
     // Animationns -- Enemy weapon placeholders
     ResourceManager::loadAnimation("BlueOrb", "Graphics/energy_orb.png", 12, 28, 0.2, 1, false);
