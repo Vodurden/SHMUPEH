@@ -20,6 +20,8 @@ For `EnemyWaveSpawner` we did know the fields that were used, but nothing else t
 
 All imports were also missing, and have been reconstructed.
 
+I also needed to update `Interface.cpp` since some of the offsets didn't work for the reconstructed assets
+
 ## Asset Recovery
 
 All original asset files are lost, but most assets have been recovered from screenshots of the game. 

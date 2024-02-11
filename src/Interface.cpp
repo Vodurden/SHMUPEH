@@ -18,15 +18,17 @@ Interface::Interface()
     SelectionBase2.SetImage(ResourceManager::getImage("SelectionBase"));
     scoreNode.SetImage(ResourceManager::getImage("ScoreNode"));
     theText = new TextRenderer("Graphics/Consola.ttf", 12, sf::Color(255, 200, 150));
-    theText->addStaticText("Main Weapon", 600, 626);
-    theText->addStaticText("Power", 738, 626);
 
-    scoreNode.SetPosition(815, 635);
     background.SetPosition(x, y);
-    SelectionBase1.SetPosition(586, 625);
-    SelectionBase2.SetPosition(700, 625);
-    healthOverlay.SetPosition(145, 631);
-    shieldOverlay.SetPosition(127, 674);
+    healthOverlay.SetPosition(x + 142, y + 8);
+    shieldOverlay.SetPosition(x + 124, y + 49);
+    scoreNode.SetPosition(x + 817, y + 12);
+
+    theText->addStaticText("Main Weapon", 600, 626);
+    SelectionBase1.SetPosition(x + 583, y + 2);
+
+    theText->addStaticText("Power", 738, 626);
+    SelectionBase2.SetPosition(x + 696, y + 2);
 
     font.LoadFromFile("Graphics/Consola.ttf", 12);
 
@@ -109,27 +111,29 @@ void Interface::draw(sf::RenderWindow& game)
 {
     game.Draw(background);
     //Health Display
-    sf::Shape underlay = sf::Shape::Rectangle(145, 631, 145 + (4.17f * ((plyHP / MaxPlyHP) * 100)), 631 + 36, sf::Color(0, 255, 0));
+    sf::Vector2f healthPos = healthOverlay.GetPosition();
+    sf::Shape underlay = sf::Shape::Rectangle(healthPos.x, healthPos.y, healthPos.x + (4.17f * ((plyHP / MaxPlyHP) * 100)), healthPos.y + 36, sf::Color(0, 255, 0));
     game.Draw(underlay);
     game.Draw(healthOverlay);
 
     std::ostringstream o;
     o << "Health: " << plyHP << "/" << MaxPlyHP << " (" << ceil((plyHP / MaxPlyHP) * 100)  << "%)";
     sf::String hpStr(o.str());
-    hpStr.SetPosition(255, 640);
+    hpStr.SetPosition(healthPos.x + 114, healthPos.y + 7);
     hpStr.SetFont(font);
     hpStr.SetSize(15);
     hpStr.SetColor(sf::Color(255, 0, 0));
     game.Draw(hpStr);
 
     //Shield Display
-    sf::Shape shunderlay = sf::Shape::Rectangle(127, 674, 127 + (4.19f * ((plyShields / MaxPlyShields) * 100)), 674 + 37, sf::Color(0, 255, 255));
+    sf::Vector2f shieldPos = shieldOverlay.GetPosition();
+    sf::Shape shunderlay = sf::Shape::Rectangle(shieldPos.x, shieldPos.y, shieldPos.x + (4.19f * ((plyShields / MaxPlyShields) * 100)), shieldPos.y + 36, sf::Color(0, 255, 255));
     game.Draw(shunderlay);
     game.Draw(shieldOverlay);
     std::ostringstream f;
     f << "Shield: " << plyShields << "/" << MaxPlyShields << " (" << ceil((plyShields / MaxPlyShields) * 100)  << "%)";
     sf::String spStr(f.str());
-    spStr.SetPosition(235, 683);
+    spStr.SetPosition(shieldPos.x + 114, shieldPos.y + 7);
     spStr.SetFont(font);
     spStr.SetSize(15);
     spStr.SetColor(sf::Color(255, 0, 0));
