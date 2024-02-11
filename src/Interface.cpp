@@ -147,10 +147,11 @@ void Interface::draw(sf::RenderWindow& game)
     theText->draw(game);
 
     //Score Display
+    sf::Vector2f scorePos = scoreNode.GetPosition();
     std::ostringstream scoreD;
     scoreD << "Score: " << plyScore;
     sf::String scoreStr(scoreD.str());
-    scoreStr.SetPosition(843, 647);
+    scoreStr.SetPosition(scorePos.x + 31, scorePos.y + 14);
     scoreStr.SetFont(font);
     scoreStr.SetSize(15);
     scoreStr.SetColor(sf::Color(14, 218, 228));
