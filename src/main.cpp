@@ -40,22 +40,52 @@ int main(int argc, char** argv)
     ResourceManager::loadAnimation("Redarang", "Graphics/redarang.png", 24, 18, 0.2, 1, false);
     ResourceManager::loadAnimation("Lazer", "Graphics/lazer.png", 4, 25, 0.2, 1, false);
 
-    State* states[2];
-    states[0] = new State_StartMenu();
-    states[1] = new State_Game();
+    STATE currentStateId = STATE_STARTMENU;
+    State* currentState = new State_StartMenu();
 
-    int currentState = STATE_STARTMENU;
+    while (currentState->isActive()) {
+        currentState->handleEvents();
+        currentState->think();
+        currentState->draw();
 
-    while (states[currentState]->isActive()) {
-      states[currentState]->handleEvents();
-      states[currentState]->think();
-      states[currentState]->draw();
-
-      currentState = states[currentState]->getNextState();
+        STATE nextStateId = (STATE)currentState->getNextState();
+        if (currentStateId != nextStateId) {
+            currentStateId = nextStateId;
+            delete currentState;
+            switch (nextStateId) {
+                case STATE_STARTMENU: currentState = new State_StartMenu(); break;
+                case STATE_GAME: currentState = new State_Game(); break;
+            }
+        }
     }
 
-    delete states[0];
-    delete states[1];
+    delete currentState;
+
+    // State_StartMenu startMenu;
+    // while (startMenu->isActive()) {
+    //   states[currentState]->handleEvents();
+    //   states[currentState]->think();
+    //   states[currentState]->draw();
+
+    //   currentState = states[currentState]->getNextState();
+    // }
+
+    // State* states[2];
+    // states[0] = new State_StartMenu();
+    // states[1] = new State_Game();
+
+    // int currentState = STATE_STARTMENU;
+
+    // while (states[currentState]->isActive()) {
+    //   states[currentState]->handleEvents();
+    //   states[currentState]->think();
+    //   states[currentState]->draw();
+
+    //   currentState = states[currentState]->getNextState();
+    // }
+
+    // delete states[0];
+    // delete states[1];
 
     return 0;
 }
